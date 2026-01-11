@@ -158,7 +158,8 @@ const navItems: NavItem[] = [
   @media (max-width: 768px) {
     .nav-toggle {
       display: block;
-      z-index: 101;
+      position: relative;
+      z-index: 1001;
     }
 
     .nav-menu {
@@ -169,21 +170,26 @@ const navItems: NavItem[] = [
       bottom: 0;
       flex-direction: column;
       justify-content: center;
-      gap: var(--spacing-md);
+      align-items: center;
+      gap: var(--spacing-lg);
       background: var(--color-primary);
       opacity: 0;
       visibility: hidden;
+      pointer-events: none;
       transition: all var(--transition-base);
+      z-index: 1000;
     }
 
     .nav-menu.active {
       opacity: 1;
       visibility: visible;
+      pointer-events: auto;
     }
 
     .nav-link {
-      font-size: var(--font-size-xl);
+      font-size: var(--font-size-2xl);
       padding: var(--spacing-md) var(--spacing-xl);
+      text-align: center;
     }
   }
 </style>
