@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Contact from '../components/Contact.astro';
+
+// Personal Information
+const personalInfo = {
+  name: 'Pham Dinh Hien',
+  role: 'Software Engineer',
+  summary: 'Results-oriented Software Engineer with over four years of experience in designing, developing, and maintaining mobile and web applications. Adept at working independently and collaboratively across global teams, with a strong focus on delivering secure, efficient, and scalable solutions.',
+  email: 'dinhhien2108@gmail.com',
+  phone: '0971108618',
+  linkedin: 'https://www.linkedin.com/in/dinhhien',
+  avatarUrl: '/hien_portfolio/avatar.jpg'
+};
+
+// Skills Data
+const skillCategories = [
+  {
+    title: 'Programming Languages',
+    icon: 'code',
+    skills: ['JavaScript', 'TypeScript', 'Dart'],
+  },
+  {
+    title: 'Frameworks & Libraries',
+    icon: 'layers',
+    skills: ['React Native', 'React.js', 'Nest.js', 'Next.js', 'Flutter', 'Tailwind CSS', 'Ant Design', 'Redux', 'Zustand', 'Firebase'],
+  },
+  {
+    title: 'Databases',
+    icon: 'database',
+    skills: ['PostgreSQL', 'MongoDB'],
+  },
+  {
+    title: 'Version Control',
+    icon: 'git',
+    skills: ['Git', 'GitHub', 'GitLab'],
+  },
+  {
+    title: 'Cloud & DevOps',
+    icon: 'cloud',
+    skills: ['AWS', 'Docker', 'Kubernetes (Basic)', 'GitHub Actions'],
+  },
+  {
+    title: 'Testing',
+    icon: 'test',
+    skills: ['React Native Testing Library', 'Jest', 'Cypress'],
+  },
+];
+
+// Experience Data
+const jobs = [
+  {
+    company: 'Zühlke',
+    role: 'Software Engineer',
+    period: 'May 2024 - Present',
+    current: true,
+    description: 'Zühlke is a global transformation partner, with engineering and innovation in our DNA. Trusted to help clients envision and build their businesses for the future.',
+    responsibilities: [
+      'Collaborate with international teams to develop and maintain web applications for clients worldwide',
+      'Build robust, secure, and fault-tolerant GraphQL servers using Nest.js',
+      'Developed an AI chatbot to enhance internal learning for company members',
+      'Write and execute unit tests using React Native Testing Library and Cypress',
+      'Deploy applications to Apple Store and Google Play Store',
+      'Conduct peer reviews to ensure high-quality, clean code',
+    ],
+  },
+  {
+    company: 'UrBox',
+    role: 'Software Engineer',
+    period: 'April 2022 - November 2024',
+    current: false,
+    description: 'UrBox is a digital rewards & loyalty solution that helps businesses integrate their reward or loyalty program with an ever-growing network of national and international gift suppliers/merchants.',
+    responsibilities: [
+      'Developed and maintained React Native mobile apps serving ~500,000 users with 1,000 daily active users',
+      'Architected applications following SOLID Principles and CLEAN Architecture',
+      'Revamped and enhanced legacy applications to modern UI/UX standards',
+      'Built robust, secure REST API servers using NestJS',
+      'Developed portals using ReactJS, NextJS, FeatherJS, and Ant Design',
+      'Integrated APIs for whitelabel loyalty projects (ACB Bank, VpBank, Dulux)',
+      'Implemented Firebase push notifications and biometric authentication',
+      'Setup CI/CD pipelines using GitHub Actions for CodePush',
+    ],
+  },
+  {
+    company: 'Vinova Pte. Ltd',
+    role: 'Mobile Developer',
+    period: 'July 2021 - March 2022',
+    current: false,
+    description: 'Vinova is a Singapore-headquartered IT consulting and development powerhouse that drives growth and success for 250+ companies worldwide.',
+    responsibilities: [
+      'Collaborated with Singapore team to develop mobile apps using React Native',
+      'Implemented RTL layout and multi-language support for applications',
+      'Integrated SDK for Google Sign-in functionality',
+      'Developed and executed unit tests to ensure software quality',
+    ],
+  },
+  {
+    company: 'LofiVN',
+    role: 'Mobile Developer Intern',
+    period: 'April 2021 - June 2021',
+    current: false,
+    description: 'Entry-level position focusing on mobile development fundamentals.',
+    responsibilities: [
+      'Developed and implemented features and UI using React Native',
+      'Learned and resolved technical problems under mentor guidance',
+    ],
+  },
+];
+
+// Education Data
+const education = [
+  {
+    institution: 'Ho Chi Minh University of Natural Resources and Environment',
+    degree: 'Bachelor of Information Technology',
+    period: '2018 - 2022',
+    achievements: [
+      'GPA: 3.2/4',
+      'Good student scholarship recipient 3 times in a row',
+    ],
+  },
+];
+
+const pageTitle = `${personalInfo.name} | ${personalInfo.role}`;
+const pageDescription = personalInfo.summary;
+---
+
+<Layout title={pageTitle} description={pageDescription} name={personalInfo.name}>
+  <Hero
+    name={personalInfo.name}
+    role={personalInfo.role}
+    summary={personalInfo.summary}
+    email={personalInfo.email}
+    phone={personalInfo.phone}
+    linkedin={personalInfo.linkedin}
+    avatarUrl={personalInfo.avatarUrl}
+  />
+
+  <Skills categories={skillCategories} />
+
+  <Experience jobs={jobs} />
+
+  <Education education={education} />
+
+  <Contact
+    email={personalInfo.email}
+    phone={personalInfo.phone}
+    linkedin={personalInfo.linkedin}
+  />
+</Layout>
