@@ -172,16 +172,16 @@ const navItems: NavItem[] = [
       justify-content: center;
       align-items: center;
       gap: var(--spacing-lg);
-      background: var(--color-primary);
-      opacity: 0;
+      background: #0F172A;
+      transform: translateX(100%);
       visibility: hidden;
       pointer-events: none;
-      transition: all var(--transition-base);
+      transition: transform var(--transition-base), visibility var(--transition-base);
       z-index: 1000;
     }
 
     .nav-menu.active {
-      opacity: 1;
+      transform: translateX(0);
       visibility: visible;
       pointer-events: auto;
     }
